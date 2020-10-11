@@ -69,17 +69,13 @@ SELECT employees.emp_no, employees.emp_lst_nm, employees.emp_frst_nm, department
 
 -- 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
-SELECT emp_lst_nm, 
+SELECT emp_lst_nm, COUNT(emp_no) 
 	FROM employees
 	GROUP BY emp_lst_nm
 	ORDER BY emp_lst_nm DESC;
-
-
-SELECT 
-	DISTINCT emp_lst_nm
-	FROM employees
-	ORDER BY emp_lst_nm DESC;
-
+	
+	
+-- Total Number of Distinct Employee Last Names.
 
 SELECT 
 	COUNT 
@@ -88,10 +84,6 @@ SELECT
 			)
 	FROM employees;
 	
-	
-SELECT 
-	FROM employees
-	COUNT emp_lst_nm;
 
 
 
